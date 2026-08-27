@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { BarChart3, Briefcase, CalendarDays, GraduationCap, Rocket, Sparkles, Target, Eye } from "lucide-react";
 import { RegisterButton } from "@/components/site/PageHero";
 import { SITE } from "@/lib/site";

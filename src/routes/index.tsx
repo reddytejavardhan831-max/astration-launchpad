@@ -61,14 +61,12 @@ function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <RegisterButton label="Register Now — It's Free" />
-              <a
-                href={SITE.register}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/programs"
                 className="inline-flex items-center rounded-xl border border-white/40 px-6 py-3 text-sm font-semibold transition-colors hover:bg-white/10"
               >
                 Explore Programs
-              </a>
+              </Link>
             </div>
           </div>
 

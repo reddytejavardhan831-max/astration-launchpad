@@ -14,9 +14,9 @@ export const SITE = {
 } as const;
 
 export const NAV = [
+  { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/programs", label: "Programs" },
-  { to: "/goals", label: "Goals" },
-  { to: "/objectives", label: "Objectives" },
+  { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ] as const;

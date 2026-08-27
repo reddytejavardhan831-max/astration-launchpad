@@ -12,8 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as GoalsRouteImport } from './routes/goals'
-import { Route as ObjectivesRouteImport } from './routes/objectives'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ProgramsRouteImport } from './routes/programs'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,14 +30,9 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GoalsRoute = GoalsRouteImport.update({
-  id: '/goals',
-  path: '/goals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ObjectivesRoute = ObjectivesRouteImport.update({
-  id: '/objectives',
-  path: '/objectives',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -51,16 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/goals': typeof GoalsRoute
-  '/objectives': typeof ObjectivesRoute
+  '/faq': typeof FaqRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/goals': typeof GoalsRoute
-  '/objectives': typeof ObjectivesRoute
+  '/faq': typeof FaqRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesById {
@@ -68,32 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/goals': typeof GoalsRoute
-  '/objectives': typeof ObjectivesRoute
+  '/faq': typeof FaqRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/about' | '/contact' | '/goals' | '/objectives' | '/programs'
+  fullPaths: '/' | '/about' | '/contact' | '/faq' | '/programs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/goals' | '/objectives' | '/programs'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/goals'
-    | '/objectives'
-    | '/programs'
+  to: '/' | '/about' | '/contact' | '/faq' | '/programs'
+  id: '__root__' | '/' | '/about' | '/contact' | '/faq' | '/programs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  GoalsRoute: typeof GoalsRoute
-  ObjectivesRoute: typeof ObjectivesRoute
+  FaqRoute: typeof FaqRoute
   ProgramsRoute: typeof ProgramsRoute
 }
 
@@ -120,18 +102,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/goals': {
-      id: '/goals'
-      path: '/goals'
-      fullPath: '/goals'
-      preLoaderRoute: typeof GoalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/objectives': {
-      id: '/objectives'
-      path: '/objectives'
-      fullPath: '/objectives'
-      preLoaderRoute: typeof ObjectivesRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programs': {
@@ -148,8 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  GoalsRoute: GoalsRoute,
-  ObjectivesRoute: ObjectivesRoute,
+  FaqRoute: FaqRoute,
   ProgramsRoute: ProgramsRoute,
 }
 export const routeTree = rootRouteImport

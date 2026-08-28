@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NAV, SITE } from "@/lib/site";
 
@@ -10,9 +10,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 lg:flex lg:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl surface-deep">
-            <Sparkles className="h-5 w-5" aria-hidden />
-          </span>
+          <img
+            src={SITE.logo}
+            alt="AstraVizion AI Solutions logo"
+            className="h-10 w-10 shrink-0 rounded-xl object-cover"
+            loading="eager"
+          />
           <span className="min-w-0">
             <span className="block truncate font-display text-base font-bold text-navy sm:text-lg">
               {SITE.name}

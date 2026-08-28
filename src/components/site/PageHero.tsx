@@ -28,7 +28,7 @@ export function RegisterButton({ label = "Register Now" }: { label?: string }) {
       href="https://forms.gle/TaHXNL8ZeaYomtPC7"
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+      className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-colors hover:bg-brand-bright"
     >
       {label}
     </a>

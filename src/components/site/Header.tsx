@@ -41,7 +41,7 @@ export function Header() {
             href={SITE.register}
             target="_blank"
             rel="noreferrer"
-            className="ml-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
+            className="ml-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-card)] transition-colors hover:bg-brand-bright"
           >
             Register Now
           </a>
@@ -78,7 +78,7 @@ export function Header() {
             href={SITE.register}
             target="_blank"
             rel="noreferrer"
-            className="block rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+            className="block rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-brand-bright"
           >
             Register Now
           </a>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Eye, Target } from "lucide-react";
+import { CheckCircle2, Goal } from "lucide-react";
 import { PageHero, RegisterButton } from "@/components/site/PageHero";
-import { SITE } from "@/lib/site";
+import { GOALS, OBJECTIVES } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About AstraVizion AI Solutions" },
       {
         property: "og:description",
-        content: "Our story, vision and mission in AI-powered education and innovation.",
+        content: "Our goals, objectives and mission in AI-powered education and innovation.",
       },
     ],
   }),
@@ -67,18 +67,46 @@ function About() {
       </section>
 
       <section className="surface-soft">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 md:grid-cols-2">
-          <article className="card-soft p-8">
-            <Eye className="h-8 w-8 text-primary" aria-hidden />
-            <h2 className="mt-3 text-xl font-bold text-navy">Vision</h2>
-            <p className="mt-2 text-muted-foreground">{SITE.vision}</p>
-          </article>
-          <article className="card-soft p-8">
-            <Target className="h-8 w-8 text-primary" aria-hidden />
-            <h2 className="mt-3 text-xl font-bold text-navy">Mission</h2>
-            <p className="mt-2 text-muted-foreground">{SITE.mission}</p>
-          </article>
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="text-center">
+            <Goal className="mx-auto h-10 w-10 text-primary" aria-hidden />
+            <h2 className="mt-4 text-2xl font-extrabold text-navy sm:text-3xl">Our Goals</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              Five clear ambitions that guide every program we design and every partnership we build.
+            </p>
+          </div>
+          <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {GOALS.map((goal, i) => (
+              <li
+                key={goal}
+                className="card-soft flex gap-4 p-6"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  {i + 1}
+                </span>
+                <p className="text-sm font-medium text-navy">{goal}</p>
+              </li>
+            ))}
+          </ol>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="text-center">
+          <CheckCircle2 className="mx-auto h-10 w-10 text-primary" aria-hidden />
+          <h2 className="mt-4 text-2xl font-extrabold text-navy sm:text-3xl">Our Objectives</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+            Practical targets that turn our goals into real outcomes for learners and organizations.
+          </p>
+        </div>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+          {OBJECTIVES.map((obj) => (
+            <li key={obj} className="flex items-start gap-3 card-soft px-5 py-4">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
+              <span className="text-sm font-medium text-navy">{obj}</span>
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );
